@@ -65,17 +65,13 @@ $app->singleton(
 |
 */
 
-$app->middleware([
-   // App\Http\Middleware\ExampleMiddleware::class
-   Barryvdh\Cors\HandleCors::class
-]);
+// $app->middleware([
+//     App\Http\Middleware\ExampleMiddleware::class
+// ]);
 
 // $app->routeMiddleware([
 //     'auth' => App\Http\Middleware\Authenticate::class,
 // ]);
-$app->routeMiddleware([
-    'cors' => Barryvdh\Cors\HandleCors::class,
-]);
 
 /*
 |--------------------------------------------------------------------------
@@ -95,6 +91,7 @@ $app->register(Barryvdh\Cors\LumenServiceProvider::class);
 $app->register(Illuminate\Redis\RedisServiceProvider::class);
 $app->register(Dingo\Api\Provider\LumenServiceProvider::class);
 $app->register(Tymon\JWTAuth\Providers\LumenServiceProvider::class);
+
 
 
 app('Dingo\Api\Auth\Auth')->extend('jwt', function ($app) {
